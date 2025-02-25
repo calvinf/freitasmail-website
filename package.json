@@ -1,0 +1,16 @@
+{
+  "name": "freitasmail-website",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bun build --minify --outdir dist index.html ",
+    "dev": "bun run index.html"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

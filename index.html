@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freitas Mail</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .main {
+            display: flex;
+            height: 100vh; /* Use exact viewport height instead of min-height */
+            max-height: 100vh; /* Ensure it doesn't exceed viewport */
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
+            color: white;
+            padding: 0; /* Remove padding to maximize space */
+        }
+        .background {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        .grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(30, 41, 59, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 41, 59, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.5), rgba(15, 23, 42, 0.5));
+        }
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .content {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically */
+            width: 100%;
+            height: 100%;
+            position: relative; /* For absolute positioning of footer */
+            animation: fadeIn 1s ease-out;
+            padding: 0; /* Remove padding */
+        }
+        .header {
+            text-align: center;
+            margin-bottom: auto; /* Push to top when in small viewport */
+            padding-top: 2rem;
+        }
+        h1 {
+            font-size: 3.5rem; /* Slightly smaller for better fit */
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        p {
+            font-size: 1.25rem; /* Slightly smaller for better fit */
+            font-weight: 300;
+            max-width: 36rem;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .footer {
+            font-size: 0.875rem;
+            color: rgba(191, 219, 254, 0.8);
+            position: absolute; /* Fixed to bottom */
+            bottom: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 0.875rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (min-width: 640px) {
+            h1 { font-size: 4rem; }
+            p { font-size: 1.5rem; }
+        }
+        @media (min-width: 768px) {
+            h1 { font-size: 5rem; }
+            p { font-size: 1.75rem; }
+        }
+        /* Adjust for very small heights */
+        @media (max-height: 500px) {
+            h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+            p { font-size: 1rem; }
+            .header { padding-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="background">
+            <div class="grid"></div>
+            <div class="gradient-overlay"></div>
+            <svg class="mountain" viewBox="0 0 1200 300" preserveAspectRatio="none">
+                <path d="M0 300L400 100L800 250L1200 50V300H0Z" fill="rgba(30, 58, 138, 0.2)" />
+            </svg>
+        </div>
+        <div class="content">
+            <header class="header">
+                <h1>Freitas Mail</h1>
+                <p>The domain whereby we receive email.</p>
+            </header>
+            <footer class="footer">
+                <p>© <script>document.write(new Date().getFullYear())</script> Calvin Freitas. All rights reserved.</p>
+            </footer>
+        </div>
+    </main>
+    <script src="index.ts"></script>
+</body>
+</html>
+
